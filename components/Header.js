@@ -11,7 +11,7 @@ import user from "../assets/guy7.jpg";
 
 const Header = () => {
   return (
-    <div className="p-5 flex items-center justify-between border-b">
+    <div className="p-4 flex items-center justify-between border-b lg:px-10">
       {/* left Side */}
       <div className="flex items-center">
         <div className="w-12 h-12">
@@ -21,7 +21,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search Facebook"
-            className="ml-2 outline-0 bg-[#f2f3f7] p-2 rounded-full pl-4 hidden sm:block"
+            className="ml-2 outline-0 bg-[#f2f3f7] p-3 rounded-full pl-4 hidden sm:block"
           />
         </div>
       </div>
