@@ -14,18 +14,42 @@ const LeftSidebar = () => {
           <MdHome className="w-9 h-9" />
           <p className="ml-3">Home</p>
         </div>
-        <div className="w-9 h-9 mt-4">
-          <Image src={guy} className="rounded-full" />
+        <div className="flex items-center mt-4">
+          <div className="w-9 h-9 ">
+            <Image src={guy} className="rounded-full" />
+          </div>
+          <p className="ml-3 font-bold">Log In</p>
         </div>
         <div className="border-b my-4"></div>
         <div className="space-y-6">
-          <AiOutlineDesktop className="w-8 h-9" />
-          <BsPeopleFill className="w-8 h-9" />
-          <MdGroups className="w-8 h-9" />
-          <BsCart3 className="w-8 h-9" />
-          <BsCalendar2Fill className="w-7 h-7" />
-          <AiFillClockCircle className="w-8 h-9" />
-          <RiArrowDownSLine className="w-9 h-9" />
+          <div className="flex">
+            <AiOutlineDesktop className="w-8 h-9" />
+            <p className="ml-3 font-bold">Watch</p>
+          </div>
+          <div className="flex">
+            <BsPeopleFill className="w-8 h-9" />
+            <p className="ml-3 font-bold">Friends</p>
+          </div>
+          <div className="flex">
+            <MdGroups className="w-8 h-9" />
+            <p className="ml-3 font-bold">Groups</p>
+          </div>
+          <div className="flex">
+            <BsCart3 className="w-8 h-9" />
+            <p className="ml-3 font-bold">Marketplace</p>
+          </div>
+          <div className="flex">
+            <BsCalendar2Fill className="w-7 h-7" />
+            <p className="ml-3 font-bold">Events</p>
+          </div>
+          <div className="flex">
+            <AiFillClockCircle className="w-8 h-9" />
+            <p className="ml-3 font-bold">Memories</p>
+          </div>
+          <div className="flex">
+            <RiArrowDownSLine className="w-9 h-9" />
+            <p className="ml-3">See More</p>
+          </div>
         </div>
       </div>
     </div>
