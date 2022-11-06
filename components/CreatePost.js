@@ -29,6 +29,7 @@ const CreatePost = () => {
             onClick={() => console.log("somethin later")}
           >
             <button className="font-bold text-white">
+              Post
               {() => console.log("somethin later")}
             </button>
           </div>
