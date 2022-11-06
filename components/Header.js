@@ -15,7 +15,7 @@ const Header = () => {
       {/* left Side */}
       <div className="flex items-center mr-2">
         <div className="w-12 h-12">
-          <Image src={facebook} alt="logo of facebook"></Image>
+          <Image src={facebook} alt="logo of facebook" key="9"></Image>
         </div>
         <div className="ml-2">
           <input
@@ -41,7 +41,7 @@ const Header = () => {
           <AiOutlineMessage className="w-7 h-7" />
         </div>
         <div className="w-10 h-10">
-          <Image src={user} className="rounded-full" alt="user image" />
+          <Image src={user} className="rounded-full" alt="user image" key="8" />
         </div>
       </div>
     </div>

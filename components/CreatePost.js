@@ -13,7 +13,7 @@ const CreatePost = () => {
       <div className="max-w-[25rem] sm:max-w-[33rem] mx-auto  sm:px-2 bg-white rounded-[1rem] ">
         <div className=" mt-8 flex items-center w-full p-3 pt-4 ">
           <div className="w-12 h-12 shrink-0">
-            <Image src={guy} className="rounded-full " />
+            <Image src={guy} className="rounded-full " key="1" alt="image" />
           </div>
           <div className="flex items-center ml-5 w-full  ">
             <input
@@ -52,7 +52,7 @@ const CreatePost = () => {
         <div className="flex justify-between px-3 sm:mx-9 pb-3">
           <div className="flex items-center">
             <div className="w-7 h-7">
-              <Image src={camera} />
+              <Image src={camera} alt="image" key="2" />
             </div>
             <p className="pl-2  whitespace-nowrap text-[14px]">Live Video</p>
           </div>
@@ -62,7 +62,7 @@ const CreatePost = () => {
             onClick={() => console.log("helo")}
           >
             <div className="w-7 h-7">
-              <Image src={photos} />
+              <Image src={photos} alt="image" key="3" />
               <input
                 type="file"
                 className="hidden"
@@ -75,7 +75,7 @@ const CreatePost = () => {
 
           <div className="flex items-center">
             <div className="w-7 h-7">
-              <Image src={smile} />
+              <Image src={smile} alt="image" key="5" />
             </div>
             <p className="pl-2   text-[14px]">Feeling/Activity</p>
           </div>

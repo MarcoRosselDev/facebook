@@ -14,13 +14,12 @@ import Image from "next/image";
 
 const Stories = () => {
   const stories = [
-    { profile: therock, background: therock20 },
-    { profile: mikeprofile, background: mike },
-    { profile: mrbeast, background: mrbeastbackground },
-    { profile: kobe, background: kobebackground },
-    { profile: arnold, background: arnoldbackground },
+    { profile: therock, background: therock20, id: "23", key: "33" },
+    { profile: mikeprofile, background: mike, id: "24", key: "34" },
+    { profile: mrbeast, background: mrbeastbackground, id: "25", key: "35" },
+    { profile: kobe, background: kobebackground, id: "26", key: "36" },
+    { profile: arnold, background: arnoldbackground, id: "27", key: "37" },
   ];
-
   return (
     <div className="flex items-center w-screen h-36  sm:w-full px-2 mt-4 sm:mt-8">
       <div className="w-full   flex justify-between space-x-1 sm:space-x-4 p-1 mx-auto max-w-[25rem] sm:max-w-[33rem] px-2 bg-white rounded-[1rem] py-3 ">
@@ -29,12 +28,16 @@ const Stories = () => {
             <div className="flex">
               <Image
                 src={story.background}
+                key={story.id}
                 className="flex object-cover rounded-[1rem]"
+                alt="image"
               />
               <div className="flex absolute top-1 left-1 w-9 h-9 p-1 bg-blue-500 rounded-full">
                 <Image
                   src={story.profile}
+                  key={story.id2}
                   className="rounded-full object-cover"
+                  alt="image"
                 />
               </div>
             </div>
