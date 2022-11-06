@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const LeftSidebar = () => {
   return (
-    <div className="w-[10rem]">
+    <div className="w-[10rem] hidden sm:block">
       <div className="flex flex-col pt-4 pl-7">
         <div className="flex items-center font-bold">
           <MdHome className="w-9 h-9" />
@@ -22,31 +22,31 @@ const LeftSidebar = () => {
         </div>
         <div className="border-b my-4"></div>
         <div className="space-y-6">
-          <div className="flex">
+          <div className="flex items-center">
             <AiOutlineDesktop className="w-8 h-9" />
             <p className="ml-3 font-bold">Watch</p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <BsPeopleFill className="w-8 h-9" />
             <p className="ml-3 font-bold">Friends</p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <MdGroups className="w-8 h-9" />
             <p className="ml-3 font-bold">Groups</p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <BsCart3 className="w-8 h-9" />
             <p className="ml-3 font-bold">Marketplace</p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <BsCalendar2Fill className="w-7 h-7" />
             <p className="ml-3 font-bold">Events</p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <AiFillClockCircle className="w-8 h-9" />
             <p className="ml-3 font-bold">Memories</p>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <RiArrowDownSLine className="w-9 h-9" />
             <p className="ml-3">See More</p>
           </div>
