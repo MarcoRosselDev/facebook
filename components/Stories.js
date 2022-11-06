@@ -13,7 +13,28 @@ import arnold from "../assets/1arnold.jpg";
 import Image from "next/image";
 
 const Stories = () => {
-  return <div>Stories</div>;
+  const stories = [
+    { profile: therock, background: therock20 },
+    { profile: mikeprofile, background: mike },
+    { profile: mrbeast, background: mrbeastbackground },
+    { profile: kobe, background: kobebackground },
+    { profile: arnold, background: arnoldbackground },
+  ];
+
+  return (
+    <div className="flex space-x-4 p-4">
+      {stories.map((story) => (
+        <div className="flex w-16 h-32 sm:w-24 sm:h-40">
+          <div className="flex">
+            <Image
+              src={story.background}
+              className="object-cover rounded-[1rem]"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Stories;
