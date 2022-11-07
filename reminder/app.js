@@ -13,7 +13,23 @@ const buttonAdd = document.querySelector(".add-button");
 const buttonDelete = document.querySelector(".delete-button");
 const buttonClean = document.querySelector(".clean-button");
 const divDom = document.querySelector(".div-dom");
+let inputValue = [];
 
 buttonAdd.addEventListener("click", function () {
-  console.log("clicked add button");
+  let printDom = "";
+  inputValue.push(input.value);
+  console.log(inputValue);
+  for (let i = 0; i < inputValue.length; i++) {
+    printDom += `<li>${inputValue[i]}</li>`;
+  }
+  divDom.innerHTML = printDom;
 });
+
+/*
+  inputValue = input.value;
+  for (let i = 0; i < inputValue.length; i++) {
+    inputValue.push() = `<li>${inputValue[i]}</li>`;
+  }
+
+  divDom.innerHTML = inputValue;
+*/
