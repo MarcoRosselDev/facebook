@@ -76,6 +76,41 @@ const Post = () => {
         <div className="border-b my-2"></div>
       </div>
       {/* comment section */}
+      <div className="">
+        <div className="flex justify-between text-[#8e8d8d]">
+          <p>See 294 previous comments</p>
+          <div className="flex items-center">
+            <p>Most Relevant</p>
+            <RiArrowDownSLine />
+          </div>
+        </div>
+        <div className="">
+          <div className="flex items-center mt-3">
+            <div className="w-10 h-10">
+              <Image src={guy} className="rounded-full" />
+            </div>
+            <p className="ml-2 font-bold">Jon Doe</p>
+            <p className="ml-8 ">First comment</p>
+          </div>
+          <div className="flex ml-[3rem] -mt-1.5">
+            <p className="mr-2">Like</p>
+            <p>Reply</p>
+          </div>
+        </div>
+        <div className="">
+          <div className="flex items-center mt-3">
+            <div className="w-10 h-10">
+              <Image src={guy} className="rounded-full" />
+            </div>
+            <p className="ml-2 font-bold">Jon Doe</p>
+            <p className="ml-8">Second comment</p>
+          </div>
+          <div className="flex ml-[3rem] -mt-1.5">
+            <p className="mr-2">Like</p>
+            <p>Reply</p>
+          </div>
+        </div>
+      </div>
       {/* Input */}
     </div>
   );
