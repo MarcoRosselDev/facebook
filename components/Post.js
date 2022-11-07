@@ -35,7 +35,13 @@ const Post = () => {
         </div>
       </div>
       {/* Input */}
+      <div className="mt-3">
+        <p>My brand new car</p>
+      </div>
       {/* Image */}
+      <div className="">
+        <Image src={car} />
+      </div>
       {/* number of Likes + buttons */}
       {/* comment section */}
       {/* Input */}

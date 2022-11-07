@@ -26,7 +26,7 @@ const Header = () => {
         </div>
       </div>
       {/* middle */}
-      <div className="flex items-center space-x-7">
+      <div className="flex items-center space-x-7 ml-0">
         <MdHome className="w-8 h-9" />
         <FiFlag className="w-7 h-6" />
         <FiPlayCircle className="w-8 h-7" />
