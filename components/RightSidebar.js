@@ -30,7 +30,7 @@ const RightSidebar = () => {
   ];
   return (
     <div>
-      <div className="pt-4 sm:pt-8 pr-7">
+      <div className="hidden lg:block pt-4 sm:pt-8 pr-7">
         <div className="flex items-center ">
           <p className="pr-4 font-bold">Contacts</p>
           <div className="space-x-2 flex items-center">
@@ -41,10 +41,18 @@ const RightSidebar = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="space-y-4 mt-4">
           {profiles.map((profiles) => (
-            <div className="w-10 h-10">
-              <img src={profiles.photo.src} alt="profile img" />
+            <div className="flex items-center">
+              <div className="relative flex w-12 h-12">
+                <img
+                  src={profiles.photo.src}
+                  className="rounded-full object-cover"
+                  alt="profile img"
+                />
+                <div className="absolute w-3.5 h-3.5 border-2 border-white right-0.5 bg-green-500 rounded-full bottom-0"></div>
+              </div>
+              <p className="pl-3 font-semibold">{profiles.name}</p>
             </div>
           ))}
         </div>
