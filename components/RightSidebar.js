@@ -17,10 +17,21 @@ import { FiSearch } from "react-icons/fi";
 import dots from "../assets/dots.png";
 
 const RightSidebar = () => {
+  const profiles = [
+    { name: "Albert E.", photo: albert },
+    { name: "Arnold S.", photo: arnold },
+    { name: "Dr Phill", photo: drphil },
+    { name: "Elon Musk", photo: elon },
+    { name: "Kobe Briant", photo: kobe },
+    { name: "Mike Tyson", photo: miketyson },
+    { name: "Mr Beast", photo: mrbeast },
+    { name: "Rihana", photo: rihana },
+    { name: "The Rock", photo: therock },
+  ];
   return (
     <div>
-      <div className="">
-        <div className="flex items-center pt-4 sm:pt-8 pr-7">
+      <div className="pt-4 sm:pt-8 pr-7">
+        <div className="flex items-center ">
           <p className="pr-4 font-bold">Contacts</p>
           <div className="space-x-2 flex items-center">
             <BsFillCameraVideoFill />
@@ -29,6 +40,13 @@ const RightSidebar = () => {
               <Image src={dots} />
             </div>
           </div>
+        </div>
+        <div className="">
+          {profiles.map((profiles) => (
+            <div className="w-10 h-10">
+              <img src={profiles.photo.src} alt="profile img" />
+            </div>
+          ))}
         </div>
       </div>
     </div>
