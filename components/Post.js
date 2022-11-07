@@ -43,17 +43,37 @@ const Post = () => {
         <Image src={car} />
       </div>
       {/* number of Likes + buttons */}
-      <div className="flex justify-between text-[#8e8d8d] mt-2">
-        <div className="flex  items-center">
-          <div className="h-[1.2rem] w-[1.2rem]">
-            <Image src={like} />
+      <div className="">
+        <div className="flex justify-between text-[#8e8d8d] mt-2">
+          <div className="flex  items-center">
+            <div className="h-[1.2rem] w-[1.2rem]">
+              <Image src={like} />
+            </div>
+            <div className="h-5 w-5 ml-[2px]">
+              <Image src={hearth} />
+            </div>
+            <p className="pl-2">Emily Doe and another 351</p>
           </div>
-          <div className="h-5 w-5 ml-[2px]">
-            <Image src={hearth} />
-          </div>
-          <p className="pl-2">Emily Doe and another 351</p>
+          <p>377 Comments</p>
         </div>
-        <p>377 Comments</p>
+        <div className="border-b my-2"></div>
+        <div className="flex justify-between mx-3">
+          <div className="flex items-center">
+            <BiLike className="w-5 h-5" />
+            <p className="pl-1 text-[16px]">like</p>
+          </div>
+          <div className="flex items-center">
+            <FaRegCommentAlt className="w-4 h-4" />
+            <p className="pl-1 text-[16px]">Comment</p>
+          </div>
+          <div className="flex items-center">
+            <div className="w-5 h-5">
+              <Image src={share} />
+            </div>
+            <p className="pl-1 text-[16px]">Share</p>
+          </div>
+        </div>
+        <div className="border-b my-2"></div>
       </div>
       {/* comment section */}
       {/* Input */}
