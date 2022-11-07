@@ -26,3 +26,9 @@ function printDom(arr) {
   }
   divDom.innerHTML = printInner;
 }
+
+buttonDelete.addEventListener("click", function () {
+  localStorage.clear();
+  inputValue = [];
+  printDom(inputValue);
+});
