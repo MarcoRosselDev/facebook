@@ -76,7 +76,7 @@ const Post = () => {
         <div className="border-b my-2"></div>
       </div>
       {/* comment section */}
-      <div className="">
+      <div className="max-h-60 overflow-auto">
         <div className="flex justify-between text-[#8e8d8d]">
           <p>See 294 previous comments</p>
           <div className="flex items-center">

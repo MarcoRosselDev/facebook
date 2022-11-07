@@ -2,6 +2,7 @@ import React from "react";
 import CreatePost from "./CreatePost";
 import LeftSidebar from "./LeftSidebar";
 import Posts from "./Posts";
+import RightSidebar from "./RightSidebar";
 import Stories from "./Stories";
 
 const Feed = () => {
@@ -18,6 +19,7 @@ const Feed = () => {
         <Posts />
       </div>
       {/* Right Side Bar */}
+      <RightSidebar />
     </div>
   );
 };
