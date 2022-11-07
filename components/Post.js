@@ -35,14 +35,26 @@ const Post = () => {
         </div>
       </div>
       {/* Input */}
-      <div className="mt-3">
+      <div className="my-3">
         <p>My brand new car</p>
       </div>
       {/* Image */}
-      <div className="">
+      <div className="-mx-5">
         <Image src={car} />
       </div>
       {/* number of Likes + buttons */}
+      <div className="flex justify-between text-[#8e8d8d] mt-2">
+        <div className="flex  items-center">
+          <div className="h-[1.2rem] w-[1.2rem]">
+            <Image src={like} />
+          </div>
+          <div className="h-5 w-5 ml-[2px]">
+            <Image src={hearth} />
+          </div>
+          <p className="pl-2">Emily Doe and another 351</p>
+        </div>
+        <p>377 Comments</p>
+      </div>
       {/* comment section */}
       {/* Input */}
     </div>
