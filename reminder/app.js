@@ -15,15 +15,21 @@ const buttonClean = document.querySelector(".clean-button");
 const divDom = document.querySelector(".div-dom");
 let inputValue = [];
 
+let isLocalHost = [];
+
 buttonAdd.addEventListener("click", function () {
-  let printDom = "";
   inputValue.push(input.value);
-  console.log(inputValue);
-  for (let i = 0; i < inputValue.length; i++) {
-    printDom += `<li>${inputValue[i]}</li>`;
-  }
-  divDom.innerHTML = printDom;
+  input.value = "";
+  printDom(inputValue);
 });
+
+const printDom = (arr) => {
+  let printInner = "";
+  for (let i = 0; i < arr.length; i++) {
+    printInner += `<li>${arr[i]}</li>`;
+  }
+  divDom.innerHTML = printInner;
+};
 
 /*
   inputValue = input.value;
