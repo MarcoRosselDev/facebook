@@ -112,6 +112,27 @@ const Post = () => {
         </div>
       </div>
       {/* Input */}
+      <div className="flex items-center mt-4">
+        <div className=" w-10 h-10 shrink-0">
+          <Image src={guy} className="rounded-full " />
+        </div>
+        <div className="w-full ml-2 bg-[#f2f3f7] rounded-full flex items-center relative">
+          <input
+            type="text"
+            placeholder="Write a comment "
+            className="outline-0  p-2 rounded-full w-full bg-[#f2f3f7]"
+          />
+          <div className="flex absolute right-[4.5rem] space-x-2 text-[#8e8d8d]">
+            <BiSmile />
+            <AiOutlineCamera />
+            <AiOutlineGif />
+          </div>
+
+          <div className="mr-4 bg-blue-400 text-white rounded-full">
+            <button className="font-bold  px-2 ">Post</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
