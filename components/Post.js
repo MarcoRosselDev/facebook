@@ -11,8 +11,9 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { AiOutlineCamera, AiOutlineGif } from "react-icons/ai";
 import { BiWorld } from "react-icons/bi";
 import Image from "next/image";
+import Moment from "react-moment";
 
-const Post = ({ id, username, userImg, caption }) => {
+const Post = ({ id, username, userImg, caption, timestamp }) => {
   return (
     <div className="bg-white rounded-[1rem] px-5 py-4 mt-4">
       {/* Header */}
@@ -24,7 +25,9 @@ const Post = ({ id, username, userImg, caption }) => {
           <div className="ml-3">
             <p className="font-bold ">{username}</p>
             <div className="flex">
-              <p className="text-xs">3 hours ago &#8226;</p>
+              <p className="text-xs">
+                {<Moment fromNow>{timestamp?.toDate()}</Moment>} &#8226;
+              </p>
               <BiWorld className="ml-1 shrink-0" />
             </div>
           </div>
