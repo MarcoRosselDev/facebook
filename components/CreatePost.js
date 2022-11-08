@@ -7,7 +7,13 @@ import photos from "../assets/photos.png";
 import smile from "../assets/smile.png";
 import nouser from "../assets/nouser.png";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 
 const CreatePost = () => {
@@ -47,11 +53,11 @@ const CreatePost = () => {
 
           <div
             className="flex items-center bg-blue-500 px-3 rounded-full h-10 ml-4"
-            onClick={() => console.log("somethin later")}
+            onClick={uploadPost}
           >
             <button className="font-bold text-white">
               Post
-              {uploadPost}
+              {}
             </button>
           </div>
         </div>
