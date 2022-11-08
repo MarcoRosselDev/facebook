@@ -67,10 +67,8 @@ const CreatePost = () => {
         <div className=" mt-8 flex items-center w-full p-3 pt-4 ">
           <div className="w-12 h-12 shrink-0">
             <img
-              src={session?.user?.image}
+              src={session ? session?.user?.image : nouser.src}
               className="rounded-full "
-              key="1"
-              alt="user image"
             />
           </div>
           <div className="flex items-center ml-5 w-full  ">
@@ -87,20 +85,19 @@ const CreatePost = () => {
             onClick={uploadPost}
           >
             <button className="font-bold text-white">
-              Post
-              {}
+              {loading ? "Loading" : "Post"}
             </button>
           </div>
         </div>
 
         <div className="">
-          {/* {image ? (
+          {image ? (
             <div className="" onClick={() => setImage("")}>
               <img src={image} className="p-4" alt="" />
             </div>
           ) : (
             ""
-          )} */}
+          )}
         </div>
 
         <div
@@ -110,17 +107,17 @@ const CreatePost = () => {
         <div className="flex justify-between px-3 sm:mx-9 pb-3">
           <div className="flex items-center">
             <div className="w-7 h-7">
-              <Image src={camera} alt="image" key="2" />
+              <Image src={camera} />
             </div>
             <p className="pl-2  whitespace-nowrap text-[14px]">Live Video</p>
           </div>
 
           <div
-            className="flex items-center "
+            className="flex items-center"
             onClick={() => imageRef.current.click()}
           >
             <div className="w-7 h-7">
-              <Image src={photos} alt="image" key="3" />
+              <Image src={photos} />
               <input
                 type="file"
                 className="hidden"
@@ -133,7 +130,7 @@ const CreatePost = () => {
 
           <div className="flex items-center">
             <div className="w-7 h-7">
-              <Image src={smile} alt="image" key="5" />
+              <Image src={smile} />
             </div>
             <p className="pl-2   text-[14px]">Feeling/Activity</p>
           </div>
