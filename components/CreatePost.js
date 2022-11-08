@@ -7,6 +7,8 @@ import photos from "../assets/photos.png";
 import smile from "../assets/smile.png";
 import nouser from "../assets/nouser.png";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
 
 const CreatePost = () => {
   const { data: session } = useSession();
@@ -49,7 +51,7 @@ const CreatePost = () => {
           >
             <button className="font-bold text-white">
               Post
-              {() => console.log("somethin later")}
+              {uploadPost}
             </button>
           </div>
         </div>
