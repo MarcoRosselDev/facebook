@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import Image from "next/image";
 import guy from "../assets/guy7.jpg";
@@ -19,6 +19,9 @@ import { db } from "../firebase";
 const CreatePost = () => {
   const { data: session } = useSession();
   const captionRef = useRef(null);
+  const imageRef = useRef(null);
+  const [image, setImage] = useState(null);
+  console.log(image);
 
   // create data post and add it to the collection
   const uploadPost = async () => {
@@ -28,6 +31,17 @@ const CreatePost = () => {
       caption: captionRef.current.value,
       timestamp: serverTimestamp(),
     });
+  };
+
+  // add image to state
+  const addImageToState = (e) => {
+    const reader = new FileReader();
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[0]);
+    }
+    reader.onload = (readerEvent) => {
+      setImage(readerEvent.target.result);
+    };
   };
 
   return (
@@ -85,16 +99,16 @@ const CreatePost = () => {
           </div>
 
           <div
-            className="flex items-center"
-            onClick={() => console.log("helo")}
+            className="flex items-center "
+            onClick={() => imageRef.current.click()}
           >
             <div className="w-7 h-7">
               <Image src={photos} alt="image" key="3" />
               <input
                 type="file"
                 className="hidden"
-                // ref={imageRef}
-                // onChange={addImageToState}
+                ref={imageRef}
+                onChange={addImageToState}
               />
             </div>
             <p className="pl-2   text-[14px]">Photo/Video</p>
