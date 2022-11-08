@@ -13,7 +13,7 @@ import { BiWorld } from "react-icons/bi";
 import Image from "next/image";
 import Moment from "react-moment";
 
-const Post = ({ id, username, userImg, caption, timestamp }) => {
+const Post = ({ id, username, userImg, caption, timestamp, img }) => {
   return (
     <div className="bg-white rounded-[1rem] px-5 py-4 mt-4">
       {/* Header */}
@@ -43,7 +43,7 @@ const Post = ({ id, username, userImg, caption, timestamp }) => {
       </div>
       {/* Image */}
       <div className="-mx-5">
-        <Image src={car} />
+        <img src={img} />
       </div>
       {/* number of Likes + buttons */}
       <div className="">

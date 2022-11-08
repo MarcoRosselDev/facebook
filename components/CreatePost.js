@@ -1,12 +1,13 @@
-import React, { useRef, useState } from "react";
-
 import Image from "next/image";
+import React, { useRef, useState } from "react";
 import guy from "../assets/guy7.jpg";
 import camera from "../assets/camera.png";
 import photos from "../assets/photos.png";
 import smile from "../assets/smile.png";
-import nouser from "../assets/nouser.png";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { db, storage } from "../firebase";
+import nouser from "../assets/nouser.png";
+
 import {
   addDoc,
   collection,
@@ -14,40 +15,42 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
-import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
-
 const CreatePost = () => {
   const { data: session } = useSession();
   const captionRef = useRef(null);
+  console.log(captionRef);
   const imageRef = useRef(null);
   const [image, setImage] = useState(null);
   console.log(image);
+  const [loading, setLoading] = useState(false);
 
-  // create data post and add it to the collection
+  //Create data post and add it to the collection
   const uploadPost = async () => {
+    setLoading(true);
     const docRef = await addDoc(collection(db, "posts"), {
       profileImg: session?.user?.image,
       username: session?.user?.name,
       caption: captionRef.current.value,
       timestamp: serverTimestamp(),
     });
-    // path for the image
+    //Path for the image
     const imagePath = ref(storage, `posts/${docRef.id}/image`);
 
-    // Upload image to that adress
-    // The with the snapshot declare the download URL
-
+    //Upload image to that adress
+    //Then with the snapshot declare the download URL
     await uploadString(imagePath, image, "data_url").then(async (snapshot) => {
       const downloadURL = await getDownloadURL(imagePath);
-
       await updateDoc(doc(db, "posts", docRef.id), {
         image: downloadURL,
       });
     });
+    setImage("");
+    setLoading(false);
+    captionRef.current.value = null;
   };
 
-  // add image to state
+  //Add the image to state
   const addImageToState = (e) => {
     const reader = new FileReader();
     if (e.target.files[0]) {
