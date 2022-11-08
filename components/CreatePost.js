@@ -6,14 +6,21 @@ import camera from "../assets/camera.png";
 import photos from "../assets/photos.png";
 import smile from "../assets/smile.png";
 import nouser from "../assets/nouser.png";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const CreatePost = () => {
+  const { data: session } = useSession();
   return (
     <div className="w-screen sm:w-full ">
       <div className="max-w-[25rem] sm:max-w-[33rem] mx-auto  sm:px-2 bg-white rounded-[1rem] ">
         <div className=" mt-8 flex items-center w-full p-3 pt-4 ">
           <div className="w-12 h-12 shrink-0">
-            <Image src={guy} className="rounded-full " key="1" alt="image" />
+            <img
+              src={session?.user?.image}
+              className="rounded-full "
+              key="1"
+              alt="user image"
+            />
           </div>
           <div className="flex items-center ml-5 w-full  ">
             <input

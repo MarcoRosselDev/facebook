@@ -9,7 +9,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 const LeftSidebar = () => {
   const { data: session } = useSession();
-
+  console.log(session);
   return (
     <div className="w-[10rem] hidden sm:block">
       <div className="flex flex-col  pt-4 sm:pt-12 pl-7">
@@ -22,7 +22,7 @@ const LeftSidebar = () => {
             <img
               src={session?.user?.image}
               className="rounded-full"
-              alt="image"
+              alt="user image"
               key="7"
             />
           </div>
