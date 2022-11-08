@@ -5,8 +5,11 @@ import { BsCart3, BsPeopleFill, BsCalendar2Fill } from "react-icons/bs";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { AiOutlineDesktop, AiFillClockCircle } from "react-icons/ai";
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const LeftSidebar = () => {
+  const { data: session } = useSession();
+
   return (
     <div className="w-[10rem] hidden sm:block">
       <div className="flex flex-col  pt-4 sm:pt-12 pl-7">
@@ -16,9 +19,16 @@ const LeftSidebar = () => {
         </div>
         <div className="flex items-center mt-4">
           <div className="w-9 h-9 ">
-            <Image src={guy} className="rounded-full" alt="image" key="7" />
+            <img
+              src={session?.user?.image}
+              className="rounded-full"
+              alt="image"
+              key="7"
+            />
           </div>
-          <p className="ml-2 font-bold whitespace-nowrap">Log In</p>
+          <p className="ml-2 font-bold whitespace-nowrap">
+            {session?.user?.name}
+          </p>
         </div>
         <div className="border-b my-4"></div>
         <div className="space-y-6">

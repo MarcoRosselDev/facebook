@@ -8,8 +8,10 @@ import { GrGroup, GrAppsRounded } from "react-icons/gr";
 import { FaBell } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
 import user from "../assets/guy7.jpg";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Header = () => {
+  const { data: session } = useSession();
   return (
     <div className="p-4 flex items-center justify-between border-b lg:px-10">
       {/* left Side */}
@@ -40,8 +42,14 @@ const Header = () => {
           <FaBell className="w-7 h-7" />
           <AiOutlineMessage className="w-7 h-7" />
         </div>
+
         <div className="w-10 h-10">
-          <Image src={user} className="rounded-full" alt="user image" key="8" />
+          <img
+            src={session?.user?.image}
+            className="rounded-full"
+            alt="user image"
+            key="8"
+          />
         </div>
       </div>
     </div>
