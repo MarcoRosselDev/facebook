@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Image from "next/image";
 import guy from "../assets/guy7.jpg";
@@ -10,6 +10,18 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 const CreatePost = () => {
   const { data: session } = useSession();
+  const captionRef = useRef(null);
+
+  // create data post and add it to the collection
+  const uploadPost = async () => {
+    const docRef = await addDoc(collection(db, "posts"), {
+      profileImg: session?.user?.image,
+      username: session?.user?.name,
+      caption: captionRef.current.value,
+      timestamp: serverTimestamp(),
+    });
+  };
+
   return (
     <div className="w-screen sm:w-full ">
       <div className="max-w-[25rem] sm:max-w-[33rem] mx-auto  sm:px-2 bg-white rounded-[1rem] ">
@@ -27,7 +39,7 @@ const CreatePost = () => {
               type="text"
               placeholder="What's on your mind Joe Doe?"
               className="outline-0 bg-[#f2f3f7] p-1 rounded-full pl-3 w-full h-12 truncate"
-              ref={guy}
+              ref={captionRef}
             />
           </div>
 
