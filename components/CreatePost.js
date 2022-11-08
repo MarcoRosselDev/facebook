@@ -14,7 +14,8 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { db, storage } from "../firebase";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 const CreatePost = () => {
   const { data: session } = useSession();
@@ -30,6 +31,19 @@ const CreatePost = () => {
       username: session?.user?.name,
       caption: captionRef.current.value,
       timestamp: serverTimestamp(),
+    });
+    // path for the image
+    const imagePath = ref(storage, `posts/${docRef.id}/image`);
+
+    // Upload image to that adress
+    // The with the snapshot declare the download URL
+
+    await uploadString(imagePath, image, "data_url").then(async (snapshot) => {
+      const downloadURL = await getDownloadURL(imagePath);
+
+      await updateDoc(doc(db, "posts", docRef.id), {
+        image: downloadURL,
+      });
     });
   };
 
